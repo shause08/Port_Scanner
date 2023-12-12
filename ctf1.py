@@ -1,24 +1,6 @@
 import requests
 from bs4 import BeautifulSoup, Comment
 import re
-
-def recupere_entre_deux_hashes(url):
-    # Envoie une requête HTTP pour récupérer le contenu de la page web
-    response = requests.get(url)
-    
-    # Vérifie si la requête a réussi (statut 200)
-    if response.status_code == 200:
-        # Utilise une expression régulière pour extraire les lettres ou chiffres entre deux caractères "#"
-        pattern = r'#([A-Za-z0-9]+)#'
-        
-        # Recherche toutes les occurrences dans le contenu de la page
-        resultats = re.findall(pattern, response.text)
-        
-        # Affiche les résultats trouvés
-        for resultat in resultats:
-            print(resultat)
-    else:
-        print(f"Échec de la requête. Statut de la requête : {response.status_code}")
     
 def recupere_donnees(url):
     response = requests.get(url)
